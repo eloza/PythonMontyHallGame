@@ -17,3 +17,6 @@ class MontyHall:
         else:
             self.opened_door = [door for door in self.doors if door != "car" and door != self.chosen_door][0]
 
+    def switch_door(self):
+        self.remaining_door = [door for door in self.doors if door != self.chosen_door and door != self.opened_door][0]
+        self.chosen_door = self.remaining_door
