@@ -7,3 +7,6 @@ class MontyHall:
         self.opened_door = None
         self.remaining_door = None
         random.shuffle(self.doors)
+
+    def choose_door(self, door):
+        self.chosen_door = door
