@@ -10,3 +10,10 @@ class MontyHall:
 
     def choose_door(self, door):
         self.chosen_door = door
+
+    def open_door(self):
+        if self.chosen_door == "car":
+            self.opened_door = random.choice([door for door in self.doors if door != self.chosen_door])
+        else:
+            self.opened_door = [door for door in self.doors if door != "car" and door != self.chosen_door][0]
+
