@@ -15,10 +15,10 @@ class MontyHall:
         if self.chosen_door == "car":
             self.opened_door = random.choice([door for door in self.doors if door != self.chosen_door])
         else:
-            self.opened_door = [door for door in self.doors if door != "car" and door != self.chosen_door][0]
+            self.opened_door = [door for door in self.doors if door != "car" and door != self.chosen_door]
 
     def switch_door(self):
-        self.remaining_door = [door for door in self.doors if door != self.chosen_door and door != self.opened_door][0]
+        self.remaining_door = [door for door in self.doors if door != self.chosen_door and door != self.opened_door]
         self.chosen_door = self.remaining_door
 
     def play_game(self, switch=True):
@@ -27,3 +27,4 @@ class MontyHall:
         if switch:
             self.switch_door()
         return self.chosen_door == "car"
+
